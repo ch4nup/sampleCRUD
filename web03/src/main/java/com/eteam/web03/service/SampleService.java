@@ -29,7 +29,8 @@ public class SampleService {
 		return 0;
 	}
 	
-	public int removeSample(Sample sample) {
+	public int removeSample(int sampleId) {
+		sampleMapper.deleteSample(sampleId);
 		return 0;
 	}
 	

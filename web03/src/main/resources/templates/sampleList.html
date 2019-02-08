@@ -6,12 +6,16 @@
 		<tr>
 			<td>sampleId</td>
 			<td>sampleName</td>
+			<td>수정</td>
+			<td>삭제</td>
 		</tr>
 		<!-- Model영역에 세팅된 데잉터 받기 -->
 		<tr th:each="s : ${listSample}">
 		<!-- 각각의 Sample객체에 세팅된 데이터 출력하기 -->	
 			<td th:text="${s.sampleId}"></td>
 			<td th:text="${s.sampleName}"></td>
+			<td>수정</td>
+			<td><a href = "${request.getContextPath}/deleteSample?sampleId=${s.sampleId}">삭제</a></td>
 		</tr>
 	</table>
 </body>

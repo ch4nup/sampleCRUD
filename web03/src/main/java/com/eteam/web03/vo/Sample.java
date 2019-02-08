@@ -1,5 +1,8 @@
 package com.eteam.web03.vo;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class Sample {
 	private int sampleId; //sample.sample_id
 	private String sampleName;
