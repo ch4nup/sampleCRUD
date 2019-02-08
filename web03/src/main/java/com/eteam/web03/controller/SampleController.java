@@ -1,5 +1,7 @@
 package com.eteam.web03.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.eteam.web03.service.SampleService;
+import com.eteam.web03.vo.Sample;
 
 @Controller
 public class SampleController {
@@ -18,7 +21,7 @@ public class SampleController {
 	public String addSample() {
 		return "addSample";	//view 이름은 template폴더의 addSample.html, 포워드
 	}
-	// 2. 입력 액션 - insert처리과정 후 리다이렉트방식으로 sampleList.html으로 이동
+	// 2. 입력 액션 - insert처리과정 후 리다이렉트방식으로 sampleList으로 이동
 	@PostMapping
 	public String addSample(@RequestParam(value="sampleName") String sampleName) {
 		
@@ -28,11 +31,12 @@ public class SampleController {
 		} else {
 			return "redirect:/addSample";
 		}
-		
 	}
-	// 3. 목록
+	// 3. 목록 - selectList처리과정 후 포워드방식으로 sampleList.html화면 출력
 	@GetMapping("sampleList")
 	public String sampleList(Model model) {
+		List<Sample> listSample = sampleService.getSampleList();
+		model.addAttribute("listSample", listSample);
 		return "sampleList";
 	}
 	// 4. 삭제 액션

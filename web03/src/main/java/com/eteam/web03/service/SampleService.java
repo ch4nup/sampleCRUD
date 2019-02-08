@@ -13,8 +13,10 @@ public class SampleService {
 	@Autowired 
 	private SampleMapper sampleMapper;
 	
+	//SampleMapper객체 내 selectSampleList메서드 호출
 	public List<Sample> getSampleList() {
-		return null;
+		List<Sample> listSample = sampleMapper.selectSampleList();
+		return listSample;
 	}
 	
 	public List<Sample> getSampleOne() {

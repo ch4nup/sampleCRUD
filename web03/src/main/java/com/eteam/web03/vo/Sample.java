@@ -2,7 +2,7 @@ package com.eteam.web03.vo;
 
 public class Sample {
 	private int sampleId; //sample.sample_id
-	private String smapleName;
+	private String sampleName;
 	
 	public int getSampleId() {
 		return sampleId;
@@ -10,14 +10,14 @@ public class Sample {
 	public void setSampleId(int sampleId) {
 		this.sampleId = sampleId;
 	}
-	public String getSmapleName() {
-		return smapleName;
+	public String getSampleName() {
+		return sampleName;
 	}
-	public void setSmapleName(String smapleName) {
-		this.smapleName = smapleName;
+	public void setSampleName(String sampleName) {
+		this.sampleName = sampleName;
 	}
 	@Override
 	public String toString() {
-		return "Sample [sampleId=" + sampleId + ", smapleName=" + smapleName + "]";
+		return "Sample [sampleId=" + sampleId + ", sampleName=" + sampleName + "]";
 	}
 }
