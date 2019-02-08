@@ -21,7 +21,9 @@ public class SampleService {
 		return null;
 	}
 	
-	public int addSample(Sample sample) {
+	//SampleMapper객체 내 insertSample메서드 호출
+	public int addSample(String sampleName) {
+		sampleMapper.insertSample(sampleName);
 		return 0;
 	}
 	

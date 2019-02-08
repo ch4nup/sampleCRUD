@@ -9,6 +9,7 @@
 	<select id="selectSampleOne" resultType="com.eteam.web03.vo.Sample">
 	
 	</select>
+	<!-- insert 쿼리문 -->
 	<insert id="insertSample" parameterType="com.eteam.web03.vo.Sample">
 		INSERT INTO sample(
 			sample_name

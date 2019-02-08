@@ -21,7 +21,14 @@ public class SampleController {
 	// 2. 입력 액션
 	@PostMapping
 	public String addSample(@RequestParam(value="sampleName") String sampleName) {
-		return "redirect:/sampleList";	//리다이렉트
+		
+		int result = sampleService.addSample(sampleName);
+		if(result == 0) {
+			return "redirect:/sampleList";	//리다이렉트
+		} else {
+			return "redirect:/addSample";
+		}
+		
 	}
 	// 3. 목록
 	@GetMapping("sampleList")
