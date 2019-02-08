@@ -13,12 +13,12 @@ import com.eteam.web03.service.SampleService;
 public class SampleController {
 	@Autowired 
 	private SampleService sampleService;
-	// 1. 입력폼
+	// 1. 입력폼 - 포워드방식으로 addSample.html 화면 출력
 	@GetMapping("/addSample")
 	public String addSample() {
 		return "addSample";	//view 이름은 template폴더의 addSample.html, 포워드
 	}
-	// 2. 입력 액션
+	// 2. 입력 액션 - insert처리과정 후 리다이렉트방식으로 sampleList.html으로 이동
 	@PostMapping
 	public String addSample(@RequestParam(value="sampleName") String sampleName) {
 		
