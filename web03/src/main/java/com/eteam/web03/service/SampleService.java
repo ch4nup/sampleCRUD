@@ -24,13 +24,14 @@ public class SampleService {
 	}
 	
 	//SampleMapper객체 내 insertSample메서드 호출
-	public int addSample(String sampleName) {
-		sampleMapper.insertSample(sampleName);
+	public int addSample(Sample sample) {
+		sampleMapper.insertSample(sample);
 		return 0;
 	}
 	
-	public int removeSample(int sampleId) {
-		sampleMapper.deleteSample(sampleId);
+	//SampleMapper객체 내 deleteSample메서드 호출
+	public int removeSample(Sample sample) {
+		sampleMapper.deleteSample(sample);
 		return 0;
 	}
 	

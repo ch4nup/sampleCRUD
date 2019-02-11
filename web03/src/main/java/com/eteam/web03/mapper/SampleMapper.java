@@ -8,9 +8,10 @@ import com.eteam.web03.vo.Sample;
 
 @Mapper
 public interface SampleMapper {
-	void insertSample(String sampleName);
-	
+	//insert 메서드
+	void insertSample(Sample sample);
+	//리스트 처리하는 select 메서드
 	List<Sample> selectSampleList();
-	
-	void deleteSample(int sampleId);
+	//delete 메서드
+	void deleteSample(Sample sample);
 }
