@@ -73,9 +73,27 @@ public class SampleController {
 		sample.setSampleId(sampleId);
 		Sample sampleinstance = sampleService.getSampleOne(sample);
 		model.addAttribute("sample", sampleinstance);
+		if(sampleinstance != null) {
+			System.out.println("화면처리 완료");
+		} else {
+			System.out.println("화면처리 실패");
+		}
 		return "/updateSample";
 		
 	}
 	
-	// 6. 수정 액션
+	// 6. 수정 액션 - 화면에서 보낸 sampleId, sampleName값 받기, Sample객체 내에 세팅, SampleService객체 내 modifySample메서드 호출, update처리 후 sampleList로 이동
+	@PostMapping("updateSample")
+	public String updateSample(@RequestParam(value="sampleId") int sampleId, @RequestParam(value="sampleName") String sampleName) {
+		sample.setSampleId(sampleId);
+		sample.setSampleName(sampleName);
+		int result = sampleService.modifySample(sample);
+		if(result != 0) {
+			System.out.println("수정 완료");
+		} else {
+			System.out.println("수정 실패");
+		}
+		return "redirect:/sampleList";
+		
+	}
 }

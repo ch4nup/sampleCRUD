@@ -16,5 +16,7 @@ public interface SampleMapper {
 	void deleteSample(Sample sample);
 	//update 화면처리 메서드
 	Sample selectSampleOne(Sample sample);
+	//update 메서드
+	void updateSample(Sample sample);
 	
 }

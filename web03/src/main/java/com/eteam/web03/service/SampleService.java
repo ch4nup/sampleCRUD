@@ -36,8 +36,10 @@ public class SampleService {
 		sampleMapper.deleteSample(sample);
 		return 0;
 	}
-	
+	//SampleMapper객체 내 updateSample메서드 호출
 	public int modifySample(Sample sample) {
+		sampleMapper.updateSample(sample);
+			
 		return 0;
 	}
 }

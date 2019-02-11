@@ -10,6 +10,7 @@
 			sample_name as sampleName
 		FROM sample
 	</select>
+	
 	<!-- 화면처리하는 select 쿼리문 -->
 	<select id="selectSampleOne" resultType="com.eteam.web03.vo.Sample">
 		SELECT
@@ -18,6 +19,7 @@
 		FROM sample
 		WHERE sample_id=#{sampleId}
 	</select>
+	
 	<!-- insert 쿼리문 -->
 	<insert id="insertSample" parameterType="com.eteam.web03.vo.Sample">
 		INSERT INTO sample(
@@ -25,16 +27,18 @@
 		) VALUES (
 			#{sampleName}	<!-- sample.getSampleName -->
 		)
-		
 	</insert>
+	
 	<!-- delete 쿼리문 -->
 	<delete id="deleteSample" parameterType="com.eteam.web03.vo.Sample">
 		DELETE FROM sample
 		WHERE sample_id=#{sampleId}
 	</delete>
+	
+	<!-- update 쿼리문 -->
 	<update id="updateSample" parameterType="com.eteam.web03.vo.Sample">
 		UPDATE sample
-		SET
-		
+		SET sample_name=#{sampleName}
+		WHERE sample_id=#{sampleId}
 	</update>
 </mapper>
