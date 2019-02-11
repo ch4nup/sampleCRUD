@@ -10,6 +10,7 @@
 			sample_name as sampleName
 		FROM sample
 	</select>
+	<!-- 화면처리하는 select 쿼리문 -->
 	<select id="selectSampleOne" resultType="com.eteam.web03.vo.Sample">
 		SELECT
 			sample_id as sampleId, 

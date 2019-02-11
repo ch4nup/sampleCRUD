@@ -19,8 +19,10 @@ public class SampleService {
 		return listSample;
 	}
 	
-	public List<Sample> getSampleOne() {
-		return null;
+	//SampleMapper객체 내 selectSampleOne메서드 호출
+	public Sample getSampleOne(Sample sample) {
+		Sample sampleinstance = sampleMapper.selectSampleOne(sample);
+		return sampleinstance;
 	}
 	
 	//SampleMapper객체 내 insertSample메서드 호출
