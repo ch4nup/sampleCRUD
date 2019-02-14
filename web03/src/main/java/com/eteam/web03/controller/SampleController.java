@@ -16,7 +16,7 @@ import com.eteam.web03.vo.Sample;
 public class SampleController {
 	@Autowired 
 	private SampleService sampleService;
-	@Autowired 
+	@Autowired
 	private Sample sample;
 	
 	// 1. 입력폼 - 포워드방식으로 addSample.html 화면 출력
